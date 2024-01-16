@@ -1,7 +1,8 @@
 import java.util.Scanner;
+import java.time.Year;
 
 public class Main {
-    public static void task1(int year){
+    public static void checkingHighYear(int year){
         if (((year % 100) != 0 && (year % 4) == 0) || (year % 400) == 0){
             System.out.println(year + " год - высокосный год");
         }
@@ -10,12 +11,14 @@ public class Main {
         }
     }
 
-    public static void task2(int clientOS, int clientDeviceYear) {
-        if (clientOS == 0 && clientDeviceYear < 2015) {
+    public static void installingTheApplication(int clientOS, int clientDeviceYear) {
+        int currentYear = Year.now().getValue();
+
+        if (clientOS == 0 && clientDeviceYear < currentYear) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOS == 1 && clientDeviceYear < 2015) {
+        } else if (clientOS == 1 && clientDeviceYear < currentYear) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         } else if (clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке");
@@ -24,7 +27,7 @@ public class Main {
         }
     }
 
-    public static void task3(int distance) {
+    public static void calculationOfDeliveryDays(int distance) {
         int daysForDelivery = 1;
 
         if (distance <= 20) {
@@ -45,18 +48,18 @@ public class Main {
         //Exercise 1
         System.out.print("Введите год: ");
         int yearForCheck = in.nextInt();
-        task1(yearForCheck);
+        checkingHighYear(yearForCheck);
 
         //Exercise 2
         System.out.print("Введите тип вашей операционной системы: ");
         int clientOS = in.nextInt();
         System.out.print("Ввeдите год выпуска вашего устройства: ");
         int clientDeviceYear = in.nextInt();
-        task2(clientOS, clientDeviceYear);
+        installingTheApplication(clientOS, clientDeviceYear);
 
         //Exercise 3
         System.out.print("Введите растояние от банка до вашего дома: ");
         int distance = in.nextInt();
-        task3(distance);
+        calculationOfDeliveryDays(distance);
     }
 }
