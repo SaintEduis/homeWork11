@@ -50,7 +50,7 @@ public class Main {
         //Exercise 2
         System.out.print("Введите тип вашей операционной системы: ");
         int clientOS = in.nextInt();
-        System.out.print("Введите год выпуска вашего устройства: ");
+        System.out.print("Ввeдите год выпуска вашего устройства: ");
         int clientDeviceYear = in.nextInt();
         task2(clientOS, clientDeviceYear);
 
